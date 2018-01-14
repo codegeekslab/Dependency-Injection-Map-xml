@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="BasicPhone" class="com.codegeekslab.type.BasicPhone" />
+	<bean id="SmartPhone" class="com.codegeekslab.type.SmartPhone" />
+	<!-- constructor injection of map -->
+<!-- <bean id="CallingApp" class="com.codegeekslab.app.CallingApp">
+		<constructor-arg ref="SmartPhone" />
+		<constructor-arg>
+			<map>
+				<entry>
+					<key>
+						<value>mom</value>
+					</key>
+					<value>12345</value>
+				</entry>
+				<entry>
+					<key>
+						<value>dad</value>
+					</key>
+					<value>67890</value>
+				</entry>
+				<entry>
+					<key>
+						<value>gf</value>
+					</key>
+					<value>9999999</value>
+				</entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg value="whatsapp" />
+	</bean> -->
+
+	<!-- setter injection of map -->
+	<bean id="CallingApp" class="com.codegeekslab.app.CallingApp">
+		<property name="phone" ref="SmartPhone"></property>
+		<property name="contactDetails">
+			<map>
+				<entry>
+					<key>
+						<value>mom</value>
+					</key>
+					<value>12345</value>
+				</entry>
+				<entry>
+					<key>
+						<value>dad</value>
+					</key>
+					<value>67890</value>
+				</entry>
+				<entry>
+					<key>
+						<value>gf</value>
+					</key>
+					<value>9999999</value>
+				</entry>
+			</map>
+		</property>
+		<property name="app" value="whatsapp"></property>
+	</bean>  
+</beans>
